@@ -13,7 +13,7 @@ export class AppComponent {
     console.log(`added Link: ${link.value}, added Title: ${title.value}`);
     this.articles.push(new Article(title.value, link.value))
     link.value = '';
-    title.value = ''
+    title.value = '';
     return false;
   }
 }
