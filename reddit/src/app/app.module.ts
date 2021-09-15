@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArticleComponent } from './article/article.component';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ArticleComponent
+    ArticleComponent,
+    ArticlesListComponent
   ],
   imports: [
     BrowserModule,
