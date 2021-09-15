@@ -1,5 +1,5 @@
 import { Article } from './../article/article.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-articles-list',
@@ -7,14 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./articles-list.component.css']
 })
 export class ArticlesListComponent implements OnInit {
-  articles : Article[];
+  @Input() articles : Article[];
   constructor() { 
-    this.articles = [
-      new Article("google","https://www.google.com"),
-      new Article("telegram","https://www.t.me"),
-      new Article("twitch","https://www.twitch.com")
-
-    ]
   }
 
   ngOnInit(): void {

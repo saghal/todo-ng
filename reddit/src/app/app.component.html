@@ -10,8 +10,8 @@
     <label for="exampleInputPassword1">Title</label>
     <input #newTitle type="text" class="form-control" id="title"  name="title" placeholder="Title" >
   </div>
- <!-- <button (click)="addArticle(newLink, newTitle)" type="submit" class="btn btn-success m-2">Submit</button>-->
+  <button (click)="addArticle(newLink, newTitle)" type="submit" class="btn btn-success m-2">Submit</button> 
 </form>
 
-<app-articles-list></app-articles-list>
+<app-articles-list [articles]="articles"></app-articles-list>
 </div>

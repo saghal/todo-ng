@@ -10,7 +10,6 @@ export class ArticleComponent implements OnInit {
   @Input() article : Article;
 
   constructor() {
-    this.article = new Article("google","https://www.google.com",15);
      }
    voteUp(): boolean {
     this.article.voteUp();
