@@ -1,12 +1,16 @@
-<div class="container">
-<div class="user-comment-card">
-    <div class="user-info">
-      <h4 class="user__name">loading...</h4>
-      <div class="user__comment"></div>
-      <div class="user__comment__reaction">
-        <i class="icon ion-md-thumbs-up"><img class="icon" src="../../assets/images/like.png    "></i> <small>34</small>
-        <i class="icon ion-md-thumbs-down"><img class="icon" src="../../assets/images/dislike.png"></i> <small>04</small>
+<div class="container m-2">
+    <div class="user-comment-card">
+        <div class="user-info">
+          <h4 class="user__name">{{article.votes}} points</h4>
+          <a href="{{article.link}}">
+            <h4 class="user__name"> {{article.title}} </h4>
+          </a>
+          <div class="user__comment"></div>
+          <div class="user__comment__reaction">
+            <a (click)="voteUp()"><i class="icon ion-md-thumbs-up"><img class="icon" src="../../assets/images/like.png    "></i></a> 
+            <a (click)="voteDown()"><i class="icon ion-md-thumbs-down"><img class="icon" src="../../assets/images/dislike.png"></i></a>
+          </div>
       </div>
-  </div>
-  </div>
-</div>
+      </div>
+    </div>
+    
