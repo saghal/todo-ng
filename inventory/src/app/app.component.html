@@ -1,1 +1,4 @@
-<app-product-list></app-product-list>
+<app-product-list
+  [productList]="products"
+  (onProductSelected)="productWasSelected($event)"
+></app-product-list>

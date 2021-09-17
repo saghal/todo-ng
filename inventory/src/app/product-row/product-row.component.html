@@ -1,1 +1,9 @@
-<p>product-row works!</p>
+<div>
+  <app-product-image [product]="product"></app-product-image>
+
+  <div>
+    {{ product.sku }}
+    {{ product.name }}
+  </div>
+  <app-product-price [price]="product.price"></app-product-price>
+</div>
