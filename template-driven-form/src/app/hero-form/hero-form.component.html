@@ -1,1 +1,12 @@
-<p>hero-form works!</p>
+<form #heroForm="ngForm" (ngSubmit)="onSubmit(heroForm.value)">
+  <label for="name">Name</label>
+  <input
+    type="text"
+    class="form-control"
+    id="name"
+    required
+    ngModel
+    name="name"
+  />
+  <button type="submit">submit</button>
+</form>
