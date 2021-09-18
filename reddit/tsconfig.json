@@ -4,11 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-<<<<<<< HEAD
-=======
     "strictPropertyInitialization": false,
->>>>>>> 59cd25946cc48dc87ba8da939076c7812fbe0865
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
