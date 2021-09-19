@@ -1,4 +1,12 @@
-<div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
-<ng-template #coursesList>ok</ng-template>
+<ul class="nav">
+  <li class="nav-item active">
+    <a class="nav-link" href="#">Active</a>
+  </li>
+  <li>
+    <a class="nav-link" href="#">not Active</a>
+  </li>
+</ul>
 
-<ng-template #noCourses>so ok</ng-template>
+<div>
+  <div>active</div>
+</div>
