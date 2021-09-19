@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { TitleCasePipe } from './title-case.pipe';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
-  declarations: [AppComponent, CoursesComponent, FavoriteComponent, TitleCasePipe],
+  declarations: [AppComponent, CoursesComponent, FavoriteComponent, TitleCasePipe, PanelComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

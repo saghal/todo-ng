@@ -6,8 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./favorite.component.css'],
 })
 export class FavoriteComponent implements OnInit {
-  @Input() isFavorite: boolean;
-  @Output() change = new EventEmitter();
+  @Input('isFavorite') isFavorite: boolean;
+  @Output('change') change = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
