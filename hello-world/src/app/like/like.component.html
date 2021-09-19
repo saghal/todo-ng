@@ -1,1 +1,8 @@
-<p>like works!</p>
+<button
+  class="btn"
+  [class.btn-primary]="likeStatus"
+  [class.btn-success]="!likeStatus"
+  (click)="onClick()"
+>
+  {{ likeCount }}
+</button>

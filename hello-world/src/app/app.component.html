@@ -1,11 +1,4 @@
-here
-<app-favorite
-  [isFavorite]="post.isFavorite"
-  (change)="onFavoriteChanged($event)"
->
-</app-favorite>
-
-<app-panel>
-  <ng-container class="mamad">hello</ng-container>
-  <ng-container class="akbar">ok bye</ng-container>
-</app-panel>
+<app-like
+  [likeStatus]="post.isFavorite"
+  [likeCount]="post.likesCount"
+></app-like>

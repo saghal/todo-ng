@@ -9,7 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   post = {
     title: 'Title',
-    isFavorite: true,
+    likesCount: 0,
+    isFavorite: false,
   };
   onFavoriteChanged(isFavorite: FavoriteChangedEventArgs): void {
     console.log('ok button color changed!, ', isFavorite.newValue);
