@@ -1,2 +1,2 @@
-<div *ngIf="courses.length > 0">ok</div>
-<div *ngIf="courses.length == 0">so ok</div>
+<div *ngIf="courses.length > 0; else noCourses">ok</div>
+<ng-template #noCourses>so ok</ng-template>
