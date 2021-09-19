@@ -1,1 +1,7 @@
-<span class="glyphicon glyphicon-star-empty">d</span> <i class="bi bi-star"></i>
+<button
+  [class.btn-primary]="isFavorite"
+  [class.btn-success]="!isFavorite"
+  (click)="onClick()"
+>
+  ali
+</button>
