@@ -44,5 +44,14 @@
       rows="10"
     ></textarea>
   </div>
+  <div class="checkbox">
+    <label>
+      check if you want receive emails
+      <input ngModel name="isSubscribed" type="checkbox"
+    /></label>
+  </div>
+  <div>
+    {{ f.value | json }}
+  </div>
   <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>
