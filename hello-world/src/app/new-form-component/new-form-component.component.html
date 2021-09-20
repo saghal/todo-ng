@@ -1,1 +1,19 @@
-<p>new-form-component works!</p>
+<form [formGroup]="form">
+  <input
+    type="text"
+    class="form-control"
+    (keyup.enter)="addTopic(topic)"
+    #topic
+  />
+  <ng-container formArrayName="topics">
+    <ul class="list-group">
+      <li
+        *ngFor="let topic of topics.controls"
+        (click)="removeTopic(topic)"
+        class="list-group-item"
+      >
+        {{ topic.value }}
+      </li>
+    </ul>
+  </ng-container>
+</form>
