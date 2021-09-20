@@ -10,9 +10,10 @@ import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
-  declarations: [AppComponent, CoursesComponent, FavoriteComponent, TitleCasePipe, PanelComponent, LikeComponent, ContactFormComponent],
+  declarations: [AppComponent, CoursesComponent, FavoriteComponent, TitleCasePipe, PanelComponent, LikeComponent, ContactFormComponent, SignupFormComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
