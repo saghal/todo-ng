@@ -13,6 +13,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewFormComponentComponent } from './new-form-component/new-form-component.component';
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
     SignupFormComponent,
     NewFormComponentComponent,
     ChangePasswordFormComponent,
+    PostsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
