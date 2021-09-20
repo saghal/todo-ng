@@ -21,7 +21,7 @@
       <div *ngIf="firstName.errors?.required">First name is required!</div>
       <div *ngIf="firstName.errors?.minlength">
         First name min length must be
-        {{ firstName.errors?.minlength.requiredLength }}
+        {{ firstName.errors?.minlength.requiredLength }} error
       </div>
       <div *ngIf="firstName.errors?.pattern">
         firstName pattern does not match!
