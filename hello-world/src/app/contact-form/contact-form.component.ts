@@ -12,4 +12,7 @@ export class ContactFormComponent implements OnInit {
   log(firstName: any): void {
     console.log(firstName);
   }
+  submit(f: any): void {
+    console.log(f);
+  }
 }
