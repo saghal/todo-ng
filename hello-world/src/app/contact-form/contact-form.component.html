@@ -1,30 +1,35 @@
 <form #f="ngForm" (ngSubmit)="submit(f)">
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input
-      ngModel
-      maxlength="10"
-      minlength="3"
-      required
-      pattern="saghal"
-      name="firstName"
-      #firstName="ngModel"
-      (change)="log(firstName)"
-      id="firstName"
-      type="text"
-      class="form-control"
-    />
-    <div
-      class="alert alert-danger"
-      *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
-    >
-      <div *ngIf="firstName.errors?.required">First name is required!</div>
-      <div *ngIf="firstName.errors?.minlength">
-        First name min length must be
-        {{ firstName.errors?.minlength.requiredLength }} error
-      </div>
-      <div *ngIf="firstName.errors?.pattern">
-        firstName pattern does not match!
+  <div ngModelGroup="contact" #contact="ngModelGroup">
+    <div *ngIf="contact.invalid && (contact.dirty || contact.touched)">
+      error in contact group
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        ngModel
+        maxlength="10"
+        minlength="3"
+        required
+        pattern="saghal"
+        name="firstName"
+        #firstName="ngModel"
+        (change)="log(firstName)"
+        id="firstName"
+        type="text"
+        class="form-control"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+      >
+        <div *ngIf="firstName.errors?.required">First name is required!</div>
+        <div *ngIf="firstName.errors?.minlength">
+          First name min length must be
+          {{ firstName.errors?.minlength.requiredLength }} error
+        </div>
+        <div *ngIf="firstName.errors?.pattern">
+          firstName pattern does not match!
+        </div>
       </div>
     </div>
   </div>
