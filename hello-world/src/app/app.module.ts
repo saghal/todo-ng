@@ -15,6 +15,7 @@ import { NewFormComponentComponent } from './new-form-component/new-form-compone
 import { ChangePasswordFormComponent } from './change-password-form/change-password-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './post.service';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PostService } from './post.service';
     NewFormComponentComponent,
     ChangePasswordFormComponent,
     PostsComponent,
+    GithubFollowersComponent,
   ],
   imports: [
     BrowserModule,
