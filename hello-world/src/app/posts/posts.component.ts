@@ -14,11 +14,7 @@ interface postStructure {
 export class PostsComponent implements OnInit {
   posts: postStructure[];
   private url: string = 'https://jsonplaceholder.typicode.com/posts';
-  constructor(private http: HttpClient) {
-    this.http.get<postStructure[]>(this.url).subscribe((response) => {
-      this.posts = response;
-    });
-  }
+  constructor(private http: HttpClient) {}
 
   updatePost(post: postStructure): void {
     const body = { title: 'updated title' };
@@ -46,5 +42,9 @@ export class PostsComponent implements OnInit {
       });
     console.log('in create post');
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.http.get<postStructure[]>(this.url).subscribe((response) => {
+      this.posts = response;
+    });
+  }
 }
