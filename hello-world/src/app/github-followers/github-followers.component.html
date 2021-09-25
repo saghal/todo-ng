@@ -1,1 +1,18 @@
-<p>github-followers works!</p>
+<div class="X">
+  <h1>followers</h1>
+
+  <ul class="SG">
+    <li *ngFor="let follower of followers" class="sgLi">
+      <div class="box">
+        <ul class="df">
+          <img src="{{ follower.avatar_url }}" alt="" />
+          <li>
+            <a href="{{ follower.html_url }}"
+              ><h3>{{ follower.login }}</h3></a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -16,6 +16,7 @@ import { ChangePasswordFormComponent } from './change-password-form/change-passw
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './post.service';
 import { GithubFollowersComponent } from './github-followers/github-followers.component';
+import { GithubFollowersService } from './github-followers.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { GithubFollowersComponent } from './github-followers/github-followers.co
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [PostService],
+  providers: [PostService, GithubFollowersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
