@@ -1,5 +1,9 @@
 <ul class="list-group">
-  <li class="list-group-item" (click)="onClick(posts)">
-    {{ posts.title }}
+  <li
+    *ngFor="let post of posts"
+    class="list-group-item"
+    (click)="onClick(posts)"
+  >
+    {{ post.title }}
   </li>
 </ul>
