@@ -10,13 +10,15 @@ export class AuthService {
     email: string;
     access: string;
   }[]; // must be declare a interface
-  user: any; /*: {
-    id: number;
-    username: string;
-    password: string;
-    email: string;
-    access: string;
-  };*/
+  user:
+    | {
+        id: number;
+        username: string;
+        password: string;
+        email: string;
+        access: string;
+      }
+    | undefined;
   constructor(private accountsService: AccountsService) {
     this.users = this.accountsService.accounts;
   }

@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
-  onSubmit(form: any): void {
+  onSubmit(form: { username: string; password: string }): void {
     this.isLogged = this.authService.login(form.username, form.password);
     if (this.isLogged) {
       console.log('in loggin component');
