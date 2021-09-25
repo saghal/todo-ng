@@ -22,11 +22,20 @@ export class PostsComponent implements OnInit {
     console.log(post);
   }
   deletePost(post: postStructure): void {
-    this.postService.deletePosts(post).subscribe((response) => {
-      console.log('on delete post :', response);
-      let index = this.posts.indexOf(post);
-      this.posts.splice(index, 1);
-    });
+    this.postService.deletePosts(post).subscribe(
+      (response) => {
+        console.log('on delete post :', response);
+        let index = this.posts.indexOf(post);
+        this.posts.splice(index, 1);
+      },
+      (error: Response) => {
+        if (error.status === 404) alert('post deleted');
+        else {
+          alert('error baaaaaaaw');
+          console.log(error);
+        }
+      }
+    );
   }
   createPost(title: HTMLInputElement): void {
     this.postService.createPosts(title).subscribe((response) => {
