@@ -1,1 +1,16 @@
-<p>houses works!</p>
+<div class="X">
+  <h1>Houses</h1>
+
+  <ul class="SG">
+    <li *ngFor="let house of houses" class="sgLi">
+      <div class="box">
+        <h3>{{ house.id }}</h3>
+        <ul class="df">
+          <li>style: {{ house.style }}</li>
+          <li>size: {{ house.size }}</li>
+          <li>address : {{ house.address }}</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

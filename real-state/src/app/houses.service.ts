@@ -1,7 +1,7 @@
 export class HousesService {
   houses = [
     {
-      houseId: 123,
+      id: 123,
       style: 'Apartment',
       size: 200,
       yearBuilt: 2008,
@@ -10,9 +10,9 @@ export class HousesService {
       updated: '2020-1-1',
     },
     {
-      houseId: 1234,
+      id: 321,
       style: 'Apartment',
-      size: 200,
+      size: 150,
       yearBuilt: 2009,
       type: 'sale',
       address: 'tehran',
