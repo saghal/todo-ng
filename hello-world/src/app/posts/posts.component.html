@@ -1,8 +1,14 @@
+<input
+  type="text"
+  class="form-control"
+  (keyup.enter)="createPost(title)"
+  #title
+/>
 <ul class="list-group">
   <li
     *ngFor="let post of posts"
     class="list-group-item"
-    (click)="onClick(posts)"
+    (click)="onClick(post)"
   >
     {{ post.title }}
   </li>
