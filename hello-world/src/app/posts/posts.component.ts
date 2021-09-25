@@ -20,7 +20,13 @@ export class PostsComponent implements OnInit {
     });
   }
 
-  onClick(post: object): void {
+  updatePost(post: postStructure): void {
+    const body = { title: 'updated title' };
+    this.http
+      .put<postStructure>(this.url + '/' + post.id, body)
+      .subscribe((response) => {
+        console.log('in update post :', response);
+      });
     console.log(post);
   }
   createPost(title: HTMLInputElement): void {
