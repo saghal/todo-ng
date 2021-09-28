@@ -312,7 +312,17 @@ body {
   background-size: cover;
   background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/home.png);
 }
-
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -1200px;
+  margin-top: -670px;
+  width: 2000px;
+  transform: scale(0.5);
+  height: 1300px;
+  background-repeat: no-repeat;
+}
 .reset-btn {
   position: absolute;
   top: 50%;

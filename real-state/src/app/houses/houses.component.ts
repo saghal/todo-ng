@@ -1,3 +1,4 @@
+import { houseStructure } from 'src/app/common/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { HousesService } from '../services/houses.service';
 
@@ -7,7 +8,7 @@ import { HousesService } from '../services/houses.service';
   styleUrls: ['./houses.component.css'],
 })
 export class HousesComponent implements OnInit {
-  houses: any;
+  houses: houseStructure[];
   constructor(private housesService: HousesService) {}
 
   ngOnInit(): void {

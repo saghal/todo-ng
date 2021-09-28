@@ -4,6 +4,7 @@ export interface houseStructure {
   size: number;
   yearBuilt: number;
   type: string;
+  status: string;
   address: string;
   updated: string;
 }
