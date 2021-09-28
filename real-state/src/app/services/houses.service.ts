@@ -23,4 +23,16 @@ export class HousesService {
       updated: '2020-2-1',
     },
   ];
+  houseCreate(form: houseStructure): void {
+    this.houses.push({
+      id: form.id,
+      style: form.style,
+      size: form.size,
+      yearBuilt: form.yearBuilt,
+      type: form.type,
+      status: form.status,
+      address: form.address,
+      updated: '1200-0-0',
+    });
+  }
 }
