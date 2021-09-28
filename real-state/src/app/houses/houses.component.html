@@ -2,7 +2,11 @@
   <h1>Houses</h1>
 
   <ul class="SG">
-    <li *ngFor="let house of houses" class="sgLi">
+    <li
+      *ngFor="let house of houses"
+      class="sgLi"
+      [routerLink]="['/houses', house.id]"
+    >
       <div class="box">
         <h3>{{ house.id }}</h3>
         <ul class="df">
