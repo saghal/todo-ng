@@ -1,5 +1,7 @@
+import { houseStructure } from '../common/interfaces';
+
 export class HousesService {
-  houses = [
+  houses: houseStructure[] = [
     {
       id: 123,
       style: 'Apartment',

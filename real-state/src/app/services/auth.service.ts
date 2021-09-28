@@ -1,24 +1,10 @@
 import { Injectable, OnInit } from '@angular/core';
 import { AccountsService } from './accounts.service';
-
+import { userStructure } from '../common/interfaces';
 @Injectable()
 export class AuthService {
-  users: {
-    id: number;
-    username: string;
-    password: string;
-    email: string;
-    access: string;
-  }[]; // must be declare a interface
-  user:
-    | {
-        id: number;
-        username: string;
-        password: string;
-        email: string;
-        access: string;
-      }
-    | undefined;
+  users: userStructure[];
+  user: userStructure | undefined;
   constructor(private accountsService: AccountsService) {
     this.users = this.accountsService.accounts;
   }
