@@ -1,0 +1,345 @@
+HTML CSS JSResult Skip Results Iframe
+
+
+/* =============================================================================
+   HTML5 reset
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+audio[controls],
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-font-smoothing: antialiased;
+  -ms-text-size-adjust: 100%;
+  -moz-font-smoothing: antialiased;
+  -moz-text-size-adjust: 100%;
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: "Helvetica", sans-serif;
+}
+
+::-moz-selection {
+  background: #5db7cd;
+  color: #fff;
+  text-shadow: none;
+}
+::selection {
+  background: #5db7cd;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* =============================================================================
+   Site styles
+   ========================================================================== */
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.watch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -400px;
+  margin-top: -430px;
+  width: 484px;
+  transform: scale(0.5);
+  height: 860px;
+  background-repeat: no-repeat;
+}
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -168px;
+  margin-top: -195px;
+  width: 312px;
+  height: 390px;
+  /*background-color:blue;*/
+  /*border-radius:4px;*/
+  overflow: hidden;
+  /*overflow-y:scroll;*/
+}
+.main {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 312px;
+  height: 390px;
+  background-color: black;
+  opacity: 0;
+}
+.todo {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 312px;
+  height: 390px;
+  background-color: black;
+
+  /*opacity: 0;*/
+  /*z-index: 1;*/
+}
+.notification {
+  position: absolute;
+  top: 42px;
+  left: 2px;
+  width: 308px;
+  height: 270px;
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/notif.png);
+  background-color: black;
+  z-index: 10;
+}
+
+.top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 42px;
+  text-align: right;
+}
+.title {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 120px;
+  height: 42px;
+  padding-left: 7px;
+  color: #00ee73;
+  font-size: 32px;
+  /*background-color: yellow;*/
+}
+
+.item {
+  position: relative;
+  top: 42px;
+  left: 0px;
+  margin: 5px 2px;
+  width: 308px;
+  height: 84px;
+  border-radius: 4px;
+  border: none;
+}
+.list {
+  position: relative;
+  top: 42px;
+  left: 0px;
+  width: 308px;
+  height: 80px;
+  background-color: #262628;
+  border-radius: 4px;
+  margin: 5px 2px;
+}
+
+.name {
+  position: relative;
+  top: -22px;
+  left: 65px;
+  color: white;
+  margin: 0;
+  font-size: 32px;
+  width: 200px;
+
+  /*background-color: yellow;*/
+}
+.achievement {
+  position: relative;
+  top: -52px;
+  right: 20px;
+  color: white;
+  text-align: right;
+  font-size: 24px;
+
+  /*background-color: yellow;*/
+}
+.icon {
+  position: relative;
+  left: 13px;
+  top: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+.time {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 82px;
+  height: 42px;
+  margin-right: 5px;
+  color: #9ba0aa;
+  font-size: 32px;
+}
+.backbtn {
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  width: 153px;
+  height: 38px;
+  background-repeat: no-repeat;
+
+  background-size: contain;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/backbtn.png);
+}
+
+.circle {
+  position: relative;
+  left: 16px;
+  top: -13px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: solid 2px;
+  border-color: #d8d8d8;
+  cursor: pointer;
+  background-color: #262628;
+}
+.travel {
+  position: relative;
+  top: 21px;
+  left: 65px;
+  color: white;
+  font-size: 32px;
+  /*text-decoration: line-through;*/
+}
+
+.check {
+  position: relative;
+  left: 257px;
+  top: -49px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-size: cover;
+}
+.complete {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -118px;
+  margin-top: -118px;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/complete.png);
+  width: 236px;
+  height: 236px;
+
+  opacity: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+.check {
+  opacity: 0;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/check.png);
+}
+
+.hotspot1 {
+  position: absolute;
+  left: 2px;
+  top: 47px;
+  width: 308px;
+  height: 84px;
+  background-color: red;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 100;
+}
+.hotspot2 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 155px;
+  height: 40px;
+  background-color: red;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.item.first {
+  background-color: #fe4a65;
+}
+.item.second {
+  background-color: #fa930f;
+}
+.item.third {
+  background-color: #5ac8fa;
+}
+.item.fourth {
+  background-color: #5ac8fa;
+}
+
+.icon.cart {
+  background-size: cover;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/cart.png);
+}
+.icon.bag {
+  background-size: cover;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/bag.png);
+}
+.icon.work {
+  background-size: cover;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/work.png);
+}
+.icon.home {
+  background-size: cover;
+  background-image: url(https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/home.png);
+}
+
+.reset-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 100px;
+  margin-left: 50px;
+  width: 120px;
+  height: 40px;
+  color: #4a4a4a;
+  border-radius: 4px;
+  background-color: #00ee73;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+  padding-top: 5px;
+}
+
+.description {
+  color: #4a4a4a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -180px;
+  margin-left: 50px;
+  width: 450px;
+  height: 300px;
+}
+p {
+  padding-top: 20px;
+}

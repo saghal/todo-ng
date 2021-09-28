@@ -1,1 +1,17 @@
-<p>house works!</p>
+<div class="watch">
+  <img
+    src="https://raw.githubusercontent.com/XinyueZhou/watchapp/master/resource/WatchBlack.png"
+  />
+</div>
+<div *ngIf="house !== undefined" class="description">
+  <h2>Registration Number {{ house.id }}</h2>
+  <ul>
+    <li>{{ house.style }}</li>
+    <li>{{ house.size }}</li>
+    <li>{{ house.yearBuilt }}</li>
+    <li>{{ house.type }}</li>
+    <li>{{ house.address }}</li>
+    <li>{{ house.updated }}</li>
+  </ul>
+</div>
+<div class="reset-btn">update</div>
