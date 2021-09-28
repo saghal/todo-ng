@@ -1,18 +1,20 @@
-<div class="watch">
-  <img
-    src="https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg"
-  />
+<div style="background-color: #f0f0f0" id="rcorners2">
+  <div class="watch">
+    <img
+      src="https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg"
+    />
+  </div>
+  <div *ngIf="house !== undefined" class="description">
+    <h2>Registration Number {{ house.id }}</h2>
+    <ul>
+      <li>{{ house.style }}</li>
+      <li>{{ house.size }}</li>
+      <li>{{ house.yearBuilt }}</li>
+      <li>{{ house.type }}</li>
+      <li>{{ house.address }}</li>
+      <li>{{ house.updated }}</li>
+      <li>{{ house.status }}</li>
+    </ul>
+  </div>
+  <div class="reset-btn">update</div>
 </div>
-<div *ngIf="house !== undefined" class="description">
-  <h2>Registration Number {{ house.id }}</h2>
-  <ul>
-    <li>{{ house.style }}</li>
-    <li>{{ house.size }}</li>
-    <li>{{ house.yearBuilt }}</li>
-    <li>{{ house.type }}</li>
-    <li>{{ house.address }}</li>
-    <li>{{ house.updated }}</li>
-    <li>{{ house.status }}</li>
-  </ul>
-</div>
-<div class="reset-btn">update</div>
