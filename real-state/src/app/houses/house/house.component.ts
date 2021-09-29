@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { houseStructure } from 'src/app/common/interfaces';
 import { HousesService } from 'src/app/services/houses.service';
@@ -9,9 +9,11 @@ import { HousesService } from 'src/app/services/houses.service';
 })
 export class HouseComponent implements OnInit {
   house: houseStructure | undefined;
+  isInitilize: boolean = false;
   constructor(
     private route: ActivatedRoute,
-    private housesService: HousesService
+    private housesService: HousesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,7 +24,11 @@ export class HouseComponent implements OnInit {
       console.log('id number', idNumber);
     }
     this.housesService.houses.find((house) => {
-      if (house.id === idNumber) this.house = house;
+      if (house.id === idNumber) {
+        this.house = house;
+        this.isInitilize = true;
+      } //else this.router.navigate(['/notFounded']);
     });
+    if (this.isInitilize === false) this.router.navigate(['/notFounded']);
   }
 }
