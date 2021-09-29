@@ -6,7 +6,8 @@ export class HousesService {
   constructor(private dateService: DateService) {}
   houses: houseStructure[] = [
     {
-      id: 123,
+      id: 1,
+      registrationNumber: 123,
       style: 'Apartment',
       size: 200,
       yearBuilt: 2008,
@@ -17,7 +18,8 @@ export class HousesService {
       editor: 'saghal',
     },
     {
-      id: 321,
+      id: 2,
+      registrationNumber: 321,
       style: 'Apartment',
       size: 150,
       yearBuilt: 2009,
@@ -29,9 +31,12 @@ export class HousesService {
     },
   ];
   houseCreate(form: houseStructure): void {
-    const currDate = this.dateService.getCurrentDate();
+    const currDate: string = this.dateService.getCurrentDate();
+    const length: number = this.houses.length;
+    const id: number = this.houses[length - 1].id + 1;
     this.houses.push({
-      id: form.id,
+      id: id,
+      registrationNumber: form.registrationNumber,
       style: form.style,
       size: form.size,
       yearBuilt: form.yearBuilt,
@@ -52,7 +57,7 @@ export class HousesService {
     this.houses[index].status = house.status;
     this.houses[index].address = house.address;
     this.houses[index].updated = currentDate;
-    this.houses[index].id = house.id;
+    this.houses[index].registrationNumber = house.registrationNumber;
     console.log('houses be mola', this.houses[index]);
   }
 

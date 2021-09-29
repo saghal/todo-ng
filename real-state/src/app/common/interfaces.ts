@@ -1,5 +1,6 @@
 export interface houseStructure {
   id: number;
+  registrationNumber: number;
   style: string;
   size: number;
   yearBuilt: number;
