@@ -36,7 +36,7 @@ export class HousesService {
     const id: number = this.houses[length - 1].id + 1;
     this.houses.push({
       id: id,
-      registrationNumber: form.registrationNumber,
+      registrationNumber: +form.registrationNumber,
       style: form.style,
       size: form.size,
       yearBuilt: form.yearBuilt,
