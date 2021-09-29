@@ -10,7 +10,13 @@ export class AuthService {
   }
   login(username: string, password: string): boolean {
     console.log('in authService, login function: ', username, password);
-    this.user = this.users.find((user) => {
+    let account: string | null = localStorage.getItem(username);
+    if (account !== null) {
+      let accountDetail = JSON.parse(account);
+      if (accountDetail.password === password) return true;
+      else return false;
+    } else return false;
+    /*this.user = this.users.find((user) => {
       return user.username === username;
     });
     if (this.user === undefined) {
@@ -26,6 +32,6 @@ export class AuthService {
         console.log('wrong password');
         return false;
       }
-    }
+    }*/
   }
 }
