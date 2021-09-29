@@ -16,5 +16,5 @@ export interface userStructure {
   username: string;
   password: string;
   email: string;
-  access: string;
+  admin: boolean;
 }
