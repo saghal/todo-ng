@@ -85,10 +85,13 @@
           <div class="form-group">
             <p>type <span>*</span></p>
             <span class="icon-case"><i class="fa fa-phone"></i></span>
-            <select class="combo" name="type" id="type" ngModel>
-              <option value="residential">Residential</option>
-              <option value="commercial">Commercial</option>
-              <option value="office">Office</option>
+            <select class="combo" name="username" id="username" ngModel>
+              <option
+                *ngFor="let account of accounts"
+                value="{{ account.username }}"
+              >
+                {{ account.username }}
+              </option>
             </select>
             <div class="validation"></div>
           </div>

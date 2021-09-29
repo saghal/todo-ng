@@ -1,7 +1,8 @@
-import { houseStructure } from 'src/app/common/interfaces';
+import { houseStructure, userStructure } from 'src/app/common/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { HousesService } from 'src/app/services/houses.service';
 import { Router } from '@angular/router';
+import { AccountsService } from 'src/app/services/accounts.service';
 
 @Component({
   selector: 'app-new-house',
@@ -10,12 +11,18 @@ import { Router } from '@angular/router';
 })
 export class NewHouseComponent implements OnInit {
   house: houseStructure;
-  constructor(private housesServic: HousesService, private router: Router) {}
+  accounts: userStructure[] = this.accountsService.accounts;
+  constructor(
+    private housesServic: HousesService,
+    private router: Router,
+    private accountsService: AccountsService
+  ) {}
 
   ngOnInit(): void {}
 
   createHouse(form: houseStructure): void {
     this.housesServic.houseCreate(form);
+    console.log('check user in form: ', form);
     this.router.navigate(['/home']);
   }
   onChange(ID: any): void {
