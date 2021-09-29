@@ -4,17 +4,21 @@
       src="https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg"
     />
   </div>
-  <div *ngIf="house !== undefined" class="description">
-    <h2>Registration Number {{ house.id }}</h2>
-    <ul>
-      <li>{{ house.style }}</li>
-      <li>{{ house.size }}</li>
-      <li>{{ house.yearBuilt }}</li>
-      <li>{{ house.type }}</li>
-      <li>{{ house.address }}</li>
-      <li>{{ house.updated }}</li>
-      <li>{{ house.status }}</li>
-    </ul>
+  <div *ngIf="house !== undefined">
+    <div class="description">
+      <h2>Registration Number {{ house.id }}</h2>
+      <ul>
+        <li>{{ house.style }}</li>
+        <li>{{ house.size }}</li>
+        <li>{{ house.yearBuilt }}</li>
+        <li>{{ house.type }}</li>
+        <li>{{ house.address }}</li>
+        <li>{{ house.updated }}</li>
+        <li>{{ house.status }}</li>
+      </ul>
+    </div>
+    <button class="reset-btn" [routerLink]="['/houses', 'edit', house.id]">
+      update
+    </button>
   </div>
-  <div class="reset-btn">update</div>
 </div>
