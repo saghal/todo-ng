@@ -13,6 +13,7 @@ import { HouseComponent } from './houses/house/house.component';
 import { NewHouseComponent } from './houses/new-house/new-house.component';
 import { EditHouseComponent } from './houses/edit-house/edit-house.component';
 import { DateService } from './services/date.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DateService } from './services/date.service';
     HouseComponent,
     NewHouseComponent,
     EditHouseComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [AuthService, AccountsService, HousesService, DateService],
