@@ -12,11 +12,19 @@ import { HousesService } from './services/houses.service';
 import { HouseComponent } from './houses/house/house.component';
 import { NewHouseComponent } from './houses/new-house/new-house.component';
 import { EditHouseComponent } from './houses/edit-house/edit-house.component';
+import { DateService } from './services/date.service';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HousesComponent, HouseComponent, NewHouseComponent, EditHouseComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HousesComponent,
+    HouseComponent,
+    NewHouseComponent,
+    EditHouseComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [AuthService, AccountsService, HousesService],
+  providers: [AuthService, AccountsService, HousesService, DateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
