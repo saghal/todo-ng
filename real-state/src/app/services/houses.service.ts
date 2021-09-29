@@ -14,6 +14,7 @@ export class HousesService {
       status: 'sale',
       address: 'tehran',
       updated: '2020-1-1',
+      editor: 'saghal',
     },
     {
       id: 321,
@@ -24,6 +25,7 @@ export class HousesService {
       status: 'rent',
       address: 'tehran',
       updated: '2020-2-1',
+      editor: 'saghal',
     },
   ];
   houseCreate(form: houseStructure): void {
@@ -37,6 +39,7 @@ export class HousesService {
       status: form.status,
       address: form.address,
       updated: currDate,
+      editor: form.editor,
     });
   }
 

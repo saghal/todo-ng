@@ -7,6 +7,7 @@ export interface houseStructure {
   status: string;
   address: string;
   updated: string;
+  editor: string;
 }
 
 export interface userStructure {
