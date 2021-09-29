@@ -27,6 +27,7 @@ export class HousesService {
     },
   ];
   houseCreate(form: houseStructure): void {
+    const currDate = this.dateService.getCurrentDate();
     this.houses.push({
       id: form.id,
       style: form.style,
@@ -35,7 +36,7 @@ export class HousesService {
       type: form.type,
       status: form.status,
       address: form.address,
-      updated: '1200-0-0',
+      updated: currDate,
     });
   }
 
