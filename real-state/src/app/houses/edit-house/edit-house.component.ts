@@ -11,6 +11,7 @@ import { HousesService } from 'src/app/services/houses.service';
 export class EditHouseComponent implements OnInit {
   house: houseStructure | undefined;
   index: number;
+  isInitialize: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private housesService: HousesService,
@@ -28,8 +29,10 @@ export class EditHouseComponent implements OnInit {
       if (house.id === idNumber) {
         this.house = house;
         this.index = this.housesService.houses.indexOf(this.house);
+        this.isInitialize = true;
       }
     });
+    if (this.isInitialize === false) this.router.navigate(['/notFounded']);
   }
 
   updateHouse(form: houseStructure): void {
