@@ -5,6 +5,7 @@ import { HouseComponent } from './houses/house/house.component';
 import { HousesComponent } from './houses/houses.component';
 import { NewHouseComponent } from './houses/new-house/new-house.component';
 import { LoginComponent } from './login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -12,6 +13,8 @@ const appRoutes: Routes = [
   { path: 'houses/edit/:id', component: EditHouseComponent },
   { path: 'houses/new', component: NewHouseComponent },
   { path: 'houses/:id', component: HouseComponent },
+  { path: 'notFounded', component: NotFoundComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
