@@ -10,6 +10,8 @@ import { HousesService } from 'src/app/services/houses.service';
 export class HouseComponent implements OnInit {
   house: houseStructure | undefined;
   isInitilize: boolean = false;
+  index: number;
+
   constructor(
     private route: ActivatedRoute,
     private housesService: HousesService,
@@ -26,9 +28,15 @@ export class HouseComponent implements OnInit {
     this.housesService.houses.find((house) => {
       if (house.id === idNumber) {
         this.house = house;
+        this.index = this.housesService.houses.indexOf(this.house);
         this.isInitilize = true;
       } //else this.router.navigate(['/notFounded']);
     });
     if (this.isInitilize === false) this.router.navigate(['/notFounded']);
+  }
+
+  onDelete(): void {
+    this.housesService.houseDelete(this.index);
+    this.router.navigate(['/home']);
   }
 }

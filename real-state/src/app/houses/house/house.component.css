@@ -349,7 +349,10 @@ img {
   cursor: pointer;
   padding-top: 5px;
 }
-
+.red {
+  background-color: #fe4a65;
+  margin-left: 200px;
+}
 .description {
   color: #4a4a4a;
   position: absolute;

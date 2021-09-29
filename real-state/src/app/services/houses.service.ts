@@ -52,4 +52,8 @@ export class HousesService {
     this.houses[index].id = house.id;
     console.log('houses be mola', this.houses[index]);
   }
+
+  houseDelete(index: number): void {
+    if (index > -1) this.houses.splice(index, 1);
+  }
 }
