@@ -8,13 +8,14 @@
     <div class="description">
       <h2>Registration Number {{ house.id }}</h2>
       <ul>
-        <li>{{ house.style }}</li>
-        <li>{{ house.size }}</li>
-        <li>{{ house.yearBuilt }}</li>
-        <li>{{ house.type }}</li>
-        <li>{{ house.address }}</li>
-        <li>{{ house.updated }}</li>
-        <li>{{ house.status }}</li>
+        <li>style: {{ house.style }}</li>
+        <li>size: {{ house.size }}</li>
+        <li>year: {{ house.yearBuilt }}</li>
+        <li>type: {{ house.type }}</li>
+        <li>address: {{ house.address }}</li>
+        <li>status: {{ house.status }}</li>
+        <li>updated: {{ house.updated }}</li>
+        <li>editor: {{ house.editor }}</li>
       </ul>
     </div>
     <button class="reset-btn" [routerLink]="['/houses', 'edit', house.id]">
