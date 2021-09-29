@@ -1,7 +1,8 @@
-import { houseStructure } from './../../common/interfaces';
+import { houseStructure, userStructure } from './../../common/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HousesService } from 'src/app/services/houses.service';
+import { AccountsService } from 'src/app/services/accounts.service';
 
 @Component({
   selector: 'app-edit-house',
@@ -10,12 +11,14 @@ import { HousesService } from 'src/app/services/houses.service';
 })
 export class EditHouseComponent implements OnInit {
   house: houseStructure | undefined;
+  accounts: userStructure[] = this.accountsService.accounts;
   index: number;
   isInitialize: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private housesService: HousesService,
-    private router: Router
+    private router: Router,
+    private accountsService: AccountsService
   ) {}
 
   ngOnInit(): void {
