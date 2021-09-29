@@ -18,4 +18,7 @@ export class NewHouseComponent implements OnInit {
     this.housesServic.houseCreate(form);
     this.router.navigate(['/home']);
   }
+  onChange(ID: any): void {
+    console.log(ID);
+  }
 }

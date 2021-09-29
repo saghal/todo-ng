@@ -12,10 +12,21 @@
               type="number"
               name="id"
               id="id"
-              data-rule="required"
+              required
+              minlength="3"
+              maxlength="5"
+              #ID="ngModel"
               ngModel
+              (change)="onChange(ID)"
             />
-            <div class="validation"></div>
+            <div class="alert" *ngIf="ID.invalid && (ID.dirty || ID.touched)">
+              <div *ngIf="ID.errors?.required">
+                Registration number is required!
+              </div>
+              <div *ngIf="ID.errors!.minlength">
+                Registration number must be 5
+              </div>
+            </div>
           </div>
 
           <div class="form-group">
@@ -68,6 +79,17 @@
             <p>address <span>*</span></p>
             <span class="icon-case"><i class="fa fa-comments-o"></i></span>
             <textarea name="address" rows="14" ngModel></textarea>
+            <div class="validation"></div>
+          </div>
+
+          <div class="form-group">
+            <p>type <span>*</span></p>
+            <span class="icon-case"><i class="fa fa-phone"></i></span>
+            <select class="combo" name="type" id="type" ngModel>
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+              <option value="office">Office</option>
+            </select>
             <div class="validation"></div>
           </div>
         </div>
