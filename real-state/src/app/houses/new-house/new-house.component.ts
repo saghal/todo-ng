@@ -22,10 +22,10 @@ export class NewHouseComponent implements OnInit {
 
   createHouse(form: houseStructure): void {
     this.housesServic.houseCreate(form);
-    console.log('check user in form: ', form);
     this.router.navigate(['/home']);
   }
   onChange(ID: any): void {
+    // for checking validation
     console.log(ID);
   }
 }
