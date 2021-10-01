@@ -15,6 +15,7 @@ import { EditHouseComponent } from './houses/edit-house/edit-house.component';
 import { DateService } from './services/date.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NotAccessComponent } from './not-access/not-access.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EditHouseComponent,
     NavbarComponent,
     NotFoundComponent,
+    NotAccessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [AuthService, AccountsService, HousesService, DateService],
