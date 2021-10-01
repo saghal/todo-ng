@@ -1,11 +1,13 @@
+import { userStructure } from './../common/interfaces';
 import { Injectable, OnInit } from '@angular/core';
 import { AccountsService } from './accounts.service';
-import { userStructure } from '../common/interfaces';
 @Injectable()
-export class AuthService {
+export class AuthService implements OnInit {
   users: userStructure[] | null;
   user: userStructure | undefined;
-  constructor(private accountsService: AccountsService) {
+  private loggedInAccount: boolean = false;
+  constructor(private accountsService: AccountsService) {}
+  ngOnInit(): void {
     this.accountsService.storeAccounts();
     this.users = this.accountsService.getAccounts();
   }
@@ -25,15 +27,21 @@ export class AuthService {
       console.log('user not defiend');
       return false;
     } else {
-      console.log('this account: ', this.user);
-
       if (this.user.password === password) {
-        console.log('logged in');
+        this.loggedInAccount = true;
+        console.log('logged in user: ', this.loggedInAccount);
+
         return true;
       } else {
         console.log('wrong password');
         return false;
       }
     }
+  }
+  loggedIn(): boolean {
+    return this.loggedInAccount;
+  }
+  logout(): void {
+    this.loggedInAccount = false;
   }
 }
