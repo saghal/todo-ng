@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   { path: 'houses/new', component: NewHouseComponent },
   { path: 'houses/:id', component: HouseComponent },
   { path: 'notFounded', component: NotFoundComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: '**', redirectTo: '/notFounded' },
 ];
 
 @NgModule({
