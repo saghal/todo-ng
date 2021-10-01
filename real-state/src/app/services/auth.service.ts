@@ -2,12 +2,11 @@ import { userStructure } from './../common/interfaces';
 import { Injectable, OnInit } from '@angular/core';
 import { AccountsService } from './accounts.service';
 @Injectable()
-export class AuthService implements OnInit {
+export class AuthService {
   users: userStructure[] | null;
   user: userStructure | undefined;
   private loggedInAccount: boolean = false;
-  constructor(private accountsService: AccountsService) {}
-  ngOnInit(): void {
+  constructor(private accountsService: AccountsService) {
     this.accountsService.storeAccounts();
     this.users = this.accountsService.getAccounts();
   }
