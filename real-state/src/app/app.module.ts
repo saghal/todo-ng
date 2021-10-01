@@ -16,6 +16,7 @@ import { DateService } from './services/date.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NotAccessComponent } from './not-access/not-access.component';
+import { AuthGuard } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,13 @@ import { NotAccessComponent } from './not-access/not-access.component';
     NotAccessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [AuthService, AccountsService, HousesService, DateService],
+  providers: [
+    AuthService,
+    AccountsService,
+    HousesService,
+    DateService,
+    AuthGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
