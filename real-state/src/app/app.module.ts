@@ -17,6 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NotAccessComponent } from './not-access/not-access.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { AdminGuard } from './services/admin-guard.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AuthGuard } from './services/auth-guard.service';
     HousesService,
     DateService,
     AuthGuard,
+    AdminGuard,
   ],
   bootstrap: [AppComponent],
 })

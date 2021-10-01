@@ -7,21 +7,26 @@ import { NewHouseComponent } from './houses/new-house/new-house.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './services/auth-guard.service';
+import { AdminGuard } from './services/admin-guard.service';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', canActivate: [AuthGuard], component: HousesComponent },
   {
     path: 'houses/edit/:id',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
     component: EditHouseComponent,
   },
   {
     path: 'houses/new',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
     component: NewHouseComponent,
   },
-  { path: 'houses/:id', canActivate: [AuthGuard], component: HouseComponent },
+  {
+    path: 'houses/:id',
+    canActivate: [AuthGuard],
+    component: HouseComponent,
+  },
   { path: 'notFounded', component: NotFoundComponent },
   { path: '**', redirectTo: '/notFounded' },
 ];

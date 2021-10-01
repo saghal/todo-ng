@@ -35,18 +35,5 @@ export class AccountsService {
       },
     ];
     localStorage.setItem('datas', JSON.stringify(JSONDatas));
-
-    /*localStorage.setItem(
-      'saghal',
-      JSON.stringify({ id: 1, password: 'saghal', admin: true })
-    );
-    localStorage.setItem(
-      'jes',
-      JSON.stringify({ id: 2, password: 'jes', admin: false })
-    );
-    localStorage.setItem(
-      'walter',
-      JSON.stringify({ id: 3, password: 'walter', admin: false })
-    );*/
   }
 }

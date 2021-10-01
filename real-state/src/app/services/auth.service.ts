@@ -6,18 +6,12 @@ export class AuthService {
   users: userStructure[] | null;
   user: userStructure | undefined;
   private loggedInAccount: boolean = false;
+  private userIsAdmin: boolean = false;
   constructor(private accountsService: AccountsService) {
     this.accountsService.storeAccounts();
     this.users = this.accountsService.getAccounts();
   }
   login(username: string, password: string): boolean {
-    console.log('in authService, login function: ', username, password);
-    /*   let account: string | null = localStorage.getItem(username);
-    if (account !== null) {
-      let accountDetail = JSON.parse(account);
-      if (accountDetail.password === password) return true;
-      else return false;
-    } else return false;*/
     if (this.users !== null)
       this.user = this.users.find((user) => {
         return user.username === username;
@@ -28,8 +22,7 @@ export class AuthService {
     } else {
       if (this.user.password === password) {
         this.loggedInAccount = true;
-        console.log('logged in user: ', this.loggedInAccount);
-
+        this.userIsAdmin = this.user.admin;
         return true;
       } else {
         console.log('wrong password');
@@ -42,5 +35,8 @@ export class AuthService {
   }
   logout(): void {
     this.loggedInAccount = false;
+  }
+  isAdmin(): boolean {
+    return this.userIsAdmin;
   }
 }
