@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'houses/:id',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
     component: HouseComponent,
   },
   { path: 'notFounded', component: NotFoundComponent },
