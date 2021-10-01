@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminGuard } from './services/admin-guard.service';
+import { NotAccessComponent } from './not-access/not-access.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
     component: HouseComponent,
   },
   { path: 'notFounded', component: NotFoundComponent },
+  { path: 'notAccess', component: NotAccessComponent },
   { path: '**', redirectTo: '/notFounded' },
 ];
 
