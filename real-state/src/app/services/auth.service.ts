@@ -3,22 +3,24 @@ import { AccountsService } from './accounts.service';
 import { userStructure } from '../common/interfaces';
 @Injectable()
 export class AuthService {
-  users: userStructure[];
+  users: userStructure[] | null;
   user: userStructure | undefined;
   constructor(private accountsService: AccountsService) {
-    this.users = this.accountsService.accounts;
+    this.accountsService.storeAccounts();
+    this.users = this.accountsService.getAccounts();
   }
   login(username: string, password: string): boolean {
     console.log('in authService, login function: ', username, password);
-    let account: string | null = localStorage.getItem(username);
+    /*   let account: string | null = localStorage.getItem(username);
     if (account !== null) {
       let accountDetail = JSON.parse(account);
       if (accountDetail.password === password) return true;
       else return false;
-    } else return false;
-    /*this.user = this.users.find((user) => {
-      return user.username === username;
-    });
+    } else return false;*/
+    if (this.users !== null)
+      this.user = this.users.find((user) => {
+        return user.username === username;
+      });
     if (this.user === undefined) {
       console.log('user not defiend');
       return false;
@@ -32,6 +34,6 @@ export class AuthService {
         console.log('wrong password');
         return false;
       }
-    }*/
+    }
   }
 }

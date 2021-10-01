@@ -11,7 +11,7 @@ import { AccountsService } from 'src/app/services/accounts.service';
 })
 export class EditHouseComponent implements OnInit {
   house: houseStructure | undefined;
-  accounts: userStructure[] = this.accountsService.accounts;
+  accounts: userStructure[] | null = this.accountsService.accounts;
   index: number;
   isInitialize: boolean = false;
   constructor(

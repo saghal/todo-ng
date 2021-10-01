@@ -11,7 +11,7 @@ import { AccountsService } from 'src/app/services/accounts.service';
 })
 export class NewHouseComponent implements OnInit {
   house: houseStructure;
-  accounts: userStructure[] = this.accountsService.accounts;
+  accounts: userStructure[] | null = this.accountsService.accounts;
   constructor(
     private housesServic: HousesService,
     private router: Router,
