@@ -3,3 +3,5 @@
 input.ng-invalid.ng-touched {
   border: 2px solid red;
 }
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";

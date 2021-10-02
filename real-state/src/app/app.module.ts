@@ -20,6 +20,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { AdminGuard } from './services/admin-guard.service';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileUploadService } from './services/file-upload.service';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,12 @@ import { FileUploadService } from './services/file-upload.service';
     NotAccessComponent,
     FileUploadComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    AgGridModule.withComponents([]),
+  ],
   providers: [
     AuthService,
     AccountsService,
