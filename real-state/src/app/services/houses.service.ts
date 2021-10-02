@@ -5,12 +5,14 @@ import { ColDef } from 'ag-grid-community';
 
 @Injectable()
 export class HousesService {
-  constructor(private dateService: DateService) {}
+  constructor(private dateService: DateService) {
+    console.log('in constructor');
+  }
   columnDefs: ColDef[] = [
-    { field: 'registrationNumber' },
-    { field: 'size' },
-    { field: 'yearBuilt' },
-    { field: 'updated' },
+    { field: 'registrationNumber', sortable: true },
+    { field: 'size', sortable: true },
+    { field: 'yearBuilt', sortable: true },
+    { field: 'updated', sortable: true },
   ];
   rowData: houseListStructure[] = [];
   houses: houseStructure[] = [
@@ -75,7 +77,7 @@ export class HousesService {
   }
   getHousesRowData(): houseListStructure[] {
     //this.rawStruc.registraionNumber = 123;
-
+    this.rowData = []; // component not must be redeclare this array?
     this.houses.forEach((house) => {
       this.rowData.push({
         registraionNumber: house.registrationNumber,

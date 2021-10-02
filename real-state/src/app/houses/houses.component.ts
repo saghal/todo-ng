@@ -1,5 +1,5 @@
 import { houseListStructure, houseStructure } from 'src/app/common/interfaces';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HousesService } from '../services/houses.service';
 import { ColDef } from 'ag-grid-community';
 
@@ -8,7 +8,7 @@ import { ColDef } from 'ag-grid-community';
   templateUrl: './houses.component.html',
   styleUrls: ['./houses.component.css'],
 })
-export class HousesComponent implements OnInit {
+export class HousesComponent implements OnInit, OnDestroy {
   houses: houseStructure[];
   rowData: houseListStructure[];
   columnDefs: ColDef[];
@@ -22,4 +22,6 @@ export class HousesComponent implements OnInit {
     console.log('in houses component: ', this.rowData);
     this.columnDefs = this.housesService.getHousescolumnDefs();
   }
+
+  ngOnDestroy(): void {}
 }
