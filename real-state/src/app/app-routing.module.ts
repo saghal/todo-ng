@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminGuard } from './services/admin-guard.service';
 import { NotAccessComponent } from './not-access/not-access.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   },
   { path: 'notFounded', component: NotFoundComponent },
   { path: 'notAccess', component: NotAccessComponent },
+  { path: 'upload', component: FileUploadComponent },
   { path: '**', redirectTo: '/notFounded' },
 ];
 

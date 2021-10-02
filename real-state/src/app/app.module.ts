@@ -19,6 +19,7 @@ import { NotAccessComponent } from './not-access/not-access.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminGuard } from './services/admin-guard.service';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileUploadService } from './services/file-upload.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     DateService,
     AuthGuard,
     AdminGuard,
+    FileUploadService,
   ],
   bootstrap: [AppComponent],
 })
