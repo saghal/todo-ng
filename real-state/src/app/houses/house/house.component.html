@@ -1,8 +1,8 @@
 <div style="background-color: #f0f0f0" id="rcorners2">
   <div class="watch">
-    <img
-      src="https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg"
-    />
+    <img [src]="house!.image" />
+    <!--      src="https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg"
+-->
   </div>
   <div *ngIf="house !== undefined">
     <div class="description">

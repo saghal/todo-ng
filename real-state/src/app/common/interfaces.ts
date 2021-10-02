@@ -9,6 +9,7 @@ export interface houseStructure {
   address: string;
   updated: string;
   editor: string;
+  image: string | null;
 }
 
 export interface userStructure {

@@ -1,29 +1,49 @@
-<form>
-  <div class="form-group">
-    <fieldset class="form-group">
-      <label>Upload Logo</label>
-      {{ imageError }}
-      <div class="custom-file fileInputProfileWrap">
-        <input
-          type="file"
-          (change)="fileChangeEvent($event)"
-          class="fileInputProfile"
-        />
-        <div class="img-space">
-          <ng-container *ngIf="isImageSaved; else elseTemplate">
-            <img [src]="cardImageBase64" />
-          </ng-container>
-          <ng-template #elseTemplate>
-            <img
-              src="./../../assets/img/download (1).png"
-              class="img-responsive"
-            />
-          </ng-template>
-        </div>
+<div class="form-group">
+  <fieldset class="form-group">
+    <label>Upload Logo</label>
+    {{ imageError }}
+    <div class="custom-file fileInputProfileWrap">
+      <input
+        type="file"
+        (change)="fileChangeEvent($event)"
+        class="fileInputProfile"
+      />
+      <div class="img-space">
+        <ng-container *ngIf="isImageSaved; else elseTemplate">
+          <img [src]="cardImageBase64" />
+        </ng-container>
+        <ng-template #elseTemplate>
+          <img
+            src="./../../assets/img/download (1).png"
+            class="img-responsive"
+          />
+        </ng-template>
       </div>
-    </fieldset>
+    </div>
+  </fieldset>
+</div>
+<a class="btn btn-danger" (click)="removeImage()" *ngIf="isImageSaved"
+  >Remove</a
+>
+
+<div class="form-group">
+  <p>Registration Number <span>*</span></p>
+  <span class="icon-case"><i class="fa fa-male"></i></span>
+
+  <input
+    type="file"
+    name="registrationNumber"
+    id="registrationNumber"
+    required
+    minlength="5"
+    maxlength="5"
+    pattern="^[1-9][0-9]*$"
+    #ID="ngModel"
+    ngModel
+  />
+  <div class="alert" *ngIf="ID.invalid && (ID.dirty || ID.touched)">
+    <div *ngIf="ID.errors?.required">Registration number is required!</div>
+    <div *ngIf="ID.errors?.minlength">Registration number must be 5</div>
+    <div *ngIf="ID.errors?.pattern">pattern does not match</div>
   </div>
-  <a class="btn btn-danger" (click)="removeImage()" *ngIf="isImageSaved"
-    >Remove</a
-  >
-</form>
+</div>

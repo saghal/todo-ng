@@ -27,6 +27,8 @@ export class HousesService {
       address: 'tehran',
       updated: '2020-1-1',
       editor: 'saghal',
+      image:
+        'https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg',
     },
     {
       id: 2,
@@ -39,9 +41,11 @@ export class HousesService {
       address: 'tehran',
       updated: '2020-2-1',
       editor: 'saghal',
+      image:
+        'https://rdcnewscdn.realtor.com/wp-content/uploads/2017/10/breaking-bad-whites-home.jpg',
     },
   ];
-  houseCreate(form: houseStructure): void {
+  houseCreate(form: houseStructure, image: string | null): void {
     const currDate: string = this.dateService.getCurrentDate();
     const length: number = this.houses.length;
     const id: number = this.houses[length - 1].id + 1;
@@ -56,6 +60,7 @@ export class HousesService {
       address: form.address,
       updated: currDate,
       editor: form.editor,
+      image: image,
     });
   }
 
