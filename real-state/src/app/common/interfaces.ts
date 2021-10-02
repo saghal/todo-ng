@@ -18,3 +18,10 @@ export interface userStructure {
   email: string;
   admin: boolean;
 }
+
+export interface houseListStructure {
+  registraionNumber: number;
+  size: number;
+  yearBuilt: number;
+  updated: string;
+}

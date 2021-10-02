@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
-import { houseStructure } from './../common/interfaces';
+import { houseListStructure, houseStructure } from './../common/interfaces';
 import { DateService } from './date.service';
+import { ColDef } from 'ag-grid-community';
+
 @Injectable()
 export class HousesService {
   constructor(private dateService: DateService) {}
+  columnDefs: ColDef[] = [
+    { field: 'registrationNumber' },
+    { field: 'size' },
+    { field: 'yearBuilt' },
+    { field: 'updated' },
+  ];
+  rowData: houseListStructure[] = [];
   houses: houseStructure[] = [
     {
       id: 1,
@@ -38,8 +47,8 @@ export class HousesService {
       id: id,
       registrationNumber: +form.registrationNumber,
       style: form.style,
-      size: form.size,
-      yearBuilt: form.yearBuilt,
+      size: +form.size,
+      yearBuilt: +form.yearBuilt,
       type: form.type,
       status: form.status,
       address: form.address,
@@ -57,11 +66,29 @@ export class HousesService {
     this.houses[index].status = house.status;
     this.houses[index].address = house.address;
     this.houses[index].updated = currentDate;
-    this.houses[index].registrationNumber = house.registrationNumber;
+    this.houses[index].registrationNumber = +house.registrationNumber;
     console.log('houses be mola', this.houses[index]);
   }
 
   houseDelete(index: number): void {
     if (index > -1) this.houses.splice(index, 1);
+  }
+  getHousesRowData(): houseListStructure[] {
+    //this.rawStruc.registraionNumber = 123;
+
+    this.houses.forEach((house) => {
+      this.rowData.push({
+        registraionNumber: house.registrationNumber,
+        size: house.size,
+        yearBuilt: house.yearBuilt,
+        updated: house.updated,
+      });
+    });
+
+    console.log('raw data in service : ', this.rowData);
+    return this.rowData;
+  }
+  getHousescolumnDefs(): ColDef[] {
+    return this.columnDefs;
   }
 }
