@@ -115,7 +115,7 @@
               <p>size <span>*</span></p>
               <span class="icon-case"><i class="fa fa-envelope-o"></i></span>
               <input
-                type="number"
+                type="text"
                 name="size"
                 id="size"
                 required
@@ -162,6 +162,18 @@
                 </option>
               </select>
               <div class="validation"></div>
+            </div>
+
+            <div class="form-group">
+              <p>Image <span>*</span></p>
+
+              <input
+                type="file"
+                name="photo"
+                id="photo"
+                (change)="fileChangeEvent($event)"
+                ngModel
+              />
             </div>
           </div>
         </div>

@@ -64,16 +64,21 @@ export class HousesService {
     });
   }
 
-  houseUpdate(house: houseStructure, index: number): void {
+  houseUpdate(
+    house: houseStructure,
+    index: number,
+    image: string | null
+  ): void {
     const currentDate = this.dateService.getCurrentDate();
     this.houses[index].style = house.style;
-    this.houses[index].size = house.size;
-    this.houses[index].yearBuilt = house.yearBuilt;
+    this.houses[index].size = +house.size;
+    this.houses[index].yearBuilt = +house.yearBuilt;
     this.houses[index].type = house.type;
     this.houses[index].status = house.status;
     this.houses[index].address = house.address;
     this.houses[index].updated = currentDate;
     this.houses[index].registrationNumber = +house.registrationNumber;
+    if (image) this.houses[index].image = image;
     console.log('houses be mola', this.houses[index]);
   }
 
