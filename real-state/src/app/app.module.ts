@@ -18,6 +18,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NotAccessComponent } from './not-access/not-access.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { AdminGuard } from './services/admin-guard.service';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AdminGuard } from './services/admin-guard.service';
     NavbarComponent,
     NotFoundComponent,
     NotAccessComponent,
+    FileUploadComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [
