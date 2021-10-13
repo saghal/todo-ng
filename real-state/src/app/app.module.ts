@@ -21,7 +21,27 @@ import { AdminGuard } from './services/admin-guard.service';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { FileUploadService } from './services/file-upload.service';
 import { AgGridModule } from 'ag-grid-angular';
-
+import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+const dbConfig: DBConfig = {
+  name: 'MyHousesDb',
+  version: 1,
+  objectStoresMeta: [
+    {
+      store: 'houses',
+      storeConfig: { keyPath: 'registrationNumber', autoIncrement: false },
+      storeSchema: [
+        { name: 'style', keypath: 'style', options: { unique: false } },
+        { name: 'size', keypath: 'size', options: { unique: false } },
+        { name: 'yearBuilt', keypath: 'yearBuilt', options: { unique: false } },
+        { name: 'status', keypath: 'status', options: { unique: false } },
+        { name: 'address', keypath: 'address', options: { unique: false } },
+        { name: 'updated', keypath: 'updated', options: { unique: false } },
+        { name: 'editor', keypath: 'editor', options: { unique: false } },
+        { name: 'image', keypath: 'image', options: { unique: false } },
+      ],
+    },
+  ],
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +60,7 @@ import { AgGridModule } from 'ag-grid-angular';
     AppRoutingModule,
     FormsModule,
     AgGridModule.withComponents([]),
+    NgxIndexedDBModule.forRoot(dbConfig),
   ],
   providers: [
     AuthService,

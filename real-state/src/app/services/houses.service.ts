@@ -2,10 +2,14 @@ import { Injectable } from '@angular/core';
 import { houseListStructure, houseStructure } from './../common/interfaces';
 import { DateService } from './date.service';
 import { ColDef } from 'ag-grid-community';
+import { NgxIndexedDBService } from 'ngx-indexed-db';
 
 @Injectable()
 export class HousesService {
-  constructor(private dateService: DateService) {
+  constructor(
+    private dateService: DateService,
+    private dbService: NgxIndexedDBService
+  ) {
     console.log('in constructor');
   }
   columnDefs: ColDef[] = [
@@ -49,6 +53,22 @@ export class HousesService {
     const currDate: string = this.dateService.getCurrentDate();
     const length: number = this.houses.length;
     const id: number = this.houses[length - 1].id + 1;
+    this.dbService
+      .add('houses', {
+        registrationNumber: +form.registrationNumber,
+        style: form.style,
+        size: +form.size,
+        yearBuilt: +form.yearBuilt,
+        type: form.type,
+        status: form.status,
+        address: form.address,
+        updated: currDate,
+        editor: form.editor,
+        image: image,
+      })
+      .subscribe((key: any) => {
+        console.log('key: ', key);
+      });
     this.houses.push({
       id: id,
       registrationNumber: +form.registrationNumber,
